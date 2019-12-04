@@ -10,8 +10,8 @@ void bubblesort(int *a,int n,int j){
     }
     if(a[j]>a[j+1]){
         swap(a[j],a[j+1]);
-        bubblesort(a,n,j+1);
     }
+    return bubblesort(a,n,j+1);
 }
 int main() {
     int n;
