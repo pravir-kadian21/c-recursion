@@ -1,18 +1,20 @@
 #include <iostream>
 #include<cstring>
+#include<cmath>
 using namespace std;
 
-void strinttoint(char *a,int l){
-    if(l==0){
-        return;
+int stringtoint(string a){
+    if(a.length()==1){
+        return (a[0]-'0');
     }
-    cout << a[0];
-    return strinttoint(a+1,l-1);
+    int y=stringtoint(a.substr(1));
+    int x=a[0]-'0';
+    x=x*pow(10,a.length()-1)+y;
+    return x;
 }
+
 int main() {
-    char a[100];
+    string a;
     cin>>a;
-    int l=strlen(a);
-    strinttoint(a,l);
-    return 0;
+    cout << stringtoint(a) << endl;
 }
